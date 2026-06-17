@@ -1,4 +1,6 @@
-import { ChartArea, MessageSquareText } from "lucide-react";
+import { MessageSquareText, NotebookPen } from "lucide-react";
+import Moodtracker from "./Moodtracker";
+
 
 export default function Features() {
     return (
@@ -17,11 +19,30 @@ export default function Features() {
                                 <h1 className="text-4xl">AI Chat Therapists</h1>
                             </div>
                             <p>Speak with Aria, your compassionate AI companion who listens without judgment and offers guidance tailored to your unique needs.</p>
+                            <div className="flex items-center justify-center">
+                                <div className="flex flex-col items-center justify-center border-2 p-6 rounded-3xl w-2/3 mt-4  gap-6">
+                                    <p className="self-start text-primary-container "><NotebookPen className="inline-block mx-2" />Today's Session </p>
+                                    <div className="border-2 p-4 rounded-xl self-start bg-on-primary-container">
+                                        How are you feeling today?
+                                    </div>
+                                    <div className="border-2 p-4 rounded-xl self-end bg-on-primary-container">
+                                        Much Better
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div className="w-2/5">
-                        <h1>Mood Tracking</h1>
-                        <p>Monitor your emotional patterns with simple, intuitive check-ins. Understand yourself better with gentle insights.</p>
+                    <div className="w-2/5 flex flex-col items-center justify-center gap-6">
+
+                        <div className="flex items-center justify-start w-full gap-2 text-primary-container">
+                            <MessageSquareText />
+                            <h1 className="text-4xl">Daily MoodTracker</h1>
+                        </div>
+                        <p className="justify-start w-full">Track your emotional patterns with our intuitive mood journal. Log your feelings, note triggers, and gain valuable insights into your mental wellness journey.</p>
+
+                        <div className="flex items-center w-2/3 mx-auto">
+                            <Moodtracker />
+                        </div>
                     </div>
 
                 </div>
