@@ -18,4 +18,5 @@ model User {
   clerkUserId String    @unique
   name        String?
   lastlogin   DateTime?
+  image       String
 }

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-
+import { ClerkProvider } from "@clerk/nextjs";
+import { syncCurrentUser } from "@/lib/sync-user";
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["500", "600"],
@@ -23,12 +24,14 @@ export const metadata: Metadata = {
     "MindEase helps you build healthy habits, track your mood, and find calm every day.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  await syncCurrentUser();
   return (
+
     <html
       lang="en"
       className={cn(
@@ -37,7 +40,10 @@ export default function RootLayout({
         jakarta.variable
       )}
     >
-      <body className="min-h-screen flex flex-col">{children}</body>
+      <ClerkProvider>
+
+        <body className="min-h-screen flex flex-col">{children}</body>
+      </ClerkProvider>
     </html>
   );
 }

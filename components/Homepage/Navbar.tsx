@@ -1,5 +1,7 @@
 import { Droplet } from "lucide-react";
 import { Button } from "../ui/button";
+import Link from "next/link";
+import { Show, SignOutButton, UserButton } from "@clerk/nextjs";
 export default function Navbar() {
     return (
         <nav className="flex items-center justify-between px-20 py-4 shadow-md" >
@@ -15,8 +17,16 @@ export default function Navbar() {
                 <h1>Pricing</h1>
             </div>
             <div className="flex items-center justify-center gap-2">
-                <Button variant="ghost" className="p-4">Login</Button>
-                <Button className="p-4">Get Started</Button>
+
+                <Show when="signed-out">
+                    <Link href="/sign-in" className="text-primary">Login</Link>
+                    <Link href="/sign-up" className="text-primary">Get started</Link>
+                </Show>
+                <Show when="signed-in">
+                    <UserButton />
+                    <SignOutButton />
+                </Show>
+
             </div>
         </nav >
     )
