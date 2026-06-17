@@ -1,10 +1,13 @@
-import { Button } from "@/components/ui/button";
-
+import Navbar from "@/components/Navbar";
+import Herosection from "@/components/Herosection";
+import Features from "@/components/Features";
 export default function Homepage() {
   return (
-    <div>
-      <Button className="p-4"> HI</Button >
-    </div>
+    <>
+      <Navbar />
+      <Herosection />
+      <Features />
+    </>
 
 
   );
