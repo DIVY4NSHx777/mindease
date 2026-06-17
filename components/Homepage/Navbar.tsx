@@ -1,5 +1,5 @@
 import { Droplet } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 export default function Navbar() {
     return (
         <nav className="flex items-center justify-between px-20 py-4 shadow-md" >

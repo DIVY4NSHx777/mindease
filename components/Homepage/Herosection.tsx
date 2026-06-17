@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import Blobcard from "./Blobcard";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 export default function Herosection() {
     return (
         <section className="flex items-center justify-center min-h-screen overflow-hidden">

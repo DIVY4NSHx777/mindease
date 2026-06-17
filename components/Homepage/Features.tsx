@@ -1,6 +1,7 @@
-import { MessageSquareText, NotebookPen } from "lucide-react";
+import { Calendar, HeartPlus, MessageSquareText, NotebookIcon, NotebookPen } from "lucide-react";
 import Moodtracker from "./Moodtracker";
-
+import HealthTracker from "./HealthTracker";
+import JournalGuides from "./JournalGuides";
 
 export default function Features() {
     return (
@@ -35,7 +36,7 @@ export default function Features() {
                     <div className="w-2/5 flex flex-col items-center justify-center gap-6">
 
                         <div className="flex items-center justify-start w-full gap-2 text-primary-container">
-                            <MessageSquareText />
+                            <Calendar />
                             <h1 className="text-4xl">Daily MoodTracker</h1>
                         </div>
                         <p className="justify-start w-full">Track your emotional patterns with our intuitive mood journal. Log your feelings, note triggers, and gain valuable insights into your mental wellness journey.</p>
@@ -47,6 +48,26 @@ export default function Features() {
 
                 </div>
                 {/* Second row*/}
+                <div className="flex items-center w-full gap-16 mt-6">
+                    <div className="w-2/5 flex flex-col items-center justify-start gap-4">
+                        < div className="flex items-center justify-start w-full gap-2 text-primary-container">
+                            <HeartPlus />
+                            <h1 className="text-4xl"> Health Tracking</h1>
+                        </div>
+                        <p>Monitor your physical well-being and understand how it connects to your mental state. Track your sleep, activity, and more to build a holistic view of your health.</p>
+                        <HealthTracker />
+                    </div>
+                    <div className="w-3/5 flex flex-col items-center justify-start gap-4">
+                        <div className="flex items-center justify-start w-full gap-2 text-primary-container">
+                            <NotebookIcon />
+                            <h1 className="text-4xl">Journals and Guides</h1>
+                        </div>
+                        <p className="leading-relaxed text-on-surface-variant font-normal">
+                            Explore a curated collection of guided journals and articles designed to support your mental wellness journey. Find prompts and resources to help you reflect, grow, and heal.
+                        </p>
+                        <JournalGuides />
+                    </div>
+                </div>
 
             </div>
 

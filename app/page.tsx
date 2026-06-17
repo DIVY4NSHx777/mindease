@@ -1,6 +1,6 @@
-import Navbar from "@/components/Navbar";
-import Herosection from "@/components/Herosection";
-import Features from "@/components/Features";
+import Navbar from "@/components/Homepage/Navbar";
+import Herosection from "@/components/Homepage/Herosection";
+import Features from "@/components/Homepage/Features";
 export default function Homepage() {
   return (
     <>
