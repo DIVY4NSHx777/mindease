@@ -40,7 +40,11 @@ export default async function RootLayout({
         jakarta.variable
       )}
     >
-      <ClerkProvider>
+      <ClerkProvider
+        appearance={{
+          cssLayerName: 'clerk',
+        }}
+      >
 
         <body className="min-h-screen flex flex-col">{children}</body>
       </ClerkProvider>
