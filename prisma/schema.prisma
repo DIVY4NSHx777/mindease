@@ -13,10 +13,59 @@ datasource db {
 }
 
 model User {
-  id          Int       @id @default(autoincrement())
-  email       String    @unique
-  clerkUserId String    @unique
-  name        String?
-  lastlogin   DateTime?
-  image       String
+  id            Int            @id @default(autoincrement())
+  email         String         @unique
+  clerkUserId   String         @unique
+  name          String?
+  lastlogin     DateTime?
+  image         String
+  conversations Conversation[]
+  moods         MoodEntry[]
+  habits        Habit[]
+}
+
+model Conversation {
+  id        Int       @id @default(autoincrement())
+  userId    Int
+  title     String?
+  mood      Int?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  messages  Message[]
+  user      User      @relation(fields: [userId], references: [id])
+}
+
+model Message {
+  id             Int @id @default(autoincrement())
+  conversationId Int
+
+  role         role
+  content      String
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+  conversation Conversation @relation(fields: [conversationId], references: [id])
+}
+
+model MoodEntry {
+  id     Int @id @default(autoincrement())
+  userId Int
+
+  mood      Int
+  note      String?
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model Habit {
+  id     Int @id @default(autoincrement())
+  userId Int
+
+  title     String
+  completed Boolean @default(false)
+  user      User    @relation(fields: [userId], references: [id])
+}
+
+enum role {
+  user
+  aria
 }
